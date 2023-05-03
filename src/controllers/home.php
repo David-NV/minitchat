@@ -1,0 +1,12 @@
+<?php
+session_start();
+require('../model.php');
+if(isset($_SESSION['CONNEXION'])&&$_SESSION['CONNEXION']==="OK") 
+{
+    $posts=getPosts();
+    require_once('../../templates/home.php');
+}
+else 
+{
+    header('Location:../../templates/login.php');
+}
